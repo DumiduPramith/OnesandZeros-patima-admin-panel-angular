@@ -1,0 +1,14 @@
+<mat-card class="example-card">
+  <div class="image-container">
+    <img mat-card-image [src]="predict.input_image_path" alt="input image" />
+    <img
+      mat-card-image
+      [src]="predict.predicted_image_path"
+      alt="predicted image"
+    />
+  </div>
+  <mat-card-content>
+    <p><strong>Created Date:&nbsp;</strong>{{ predict.created_at | date }}</p>
+    <p><strong>Location:&nbsp;</strong>{{ predict.tag_name }}</p>
+  </mat-card-content>
+</mat-card>

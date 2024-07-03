@@ -1,0 +1,75 @@
+<div class="d-flex justify-content-center">
+  <mat-form-field class="example-form-field">
+    <mat-label>Search</mat-label>
+    <input
+      matInput
+      type="text"
+      [(ngModel)]="value"
+      (ngModelChange)="performSearch($event)"
+    />
+    @if (value) {
+    <button matSuffix mat-icon-button aria-label="Clear" (click)="value = ''">
+      <mat-icon>close</mat-icon>
+    </button>
+    }
+  </mat-form-field>
+</div>
+<div class="me-5 ms-5">
+  <mat-selection-list>
+    @for(profile of AllUsers; track profile; let i = $index){
+    <mat-list-item (click)="viewProfile(profile)">
+      <mat-grid-list cols="12" rowHeight="2:1">
+        <mat-grid-tile>
+          <p>{{ i + 1 }}</p>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="profile-container">
+            <img
+              [src]="profile.profile_picture"
+              [alt]="profile.fname"
+              class="profile-pic"
+            />
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2">
+          <div class="d-flex align-items-center">
+            <p>{{ profile.fname }}</p>
+            &nbsp;
+            <p>{{ profile.lname }}</p>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3">
+          <p>{{ profile.email }}</p>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2">
+          @if(profile.activation_status == 1){
+          <p class="text-primary">Activated</p>
+          } @else {
+          <p class="text-danger">Not Activated</p>
+          }
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="3">
+          <div class="right d-flex align-items-center">
+            <button
+              mat-flat-button
+              color="primary"
+              class="me-3"
+              (click)="updateProfile(profile)"
+            >
+              Update Info
+            </button>
+            <button
+              mat-flat-button
+              color="warn"
+              (click)="deleteProfile($event, profile.user_id, profile.fname)"
+            >
+              Delete Profile
+            </button>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-list-item>
+    }
+  </mat-selection-list>
+</div>

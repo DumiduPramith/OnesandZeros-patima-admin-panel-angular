@@ -1,0 +1,47 @@
+<mat-card class="example-card">
+  <div class="image-container">
+    <img mat-card-image [src]="feedback.input_image_path" alt="input image" />
+    <img
+      mat-card-image
+      [src]="feedback.predicted_image_path"
+      alt="predicted image"
+    />
+  </div>
+  <mat-card-content>
+    <div class="d-flex justify-content-between">
+      <p
+        (click)="viewProfile(feedback)"
+        class="creator-clickable p-2 text-primary"
+      >
+        <strong>Creator:&nbsp;</strong>{{ feedback.fname }}
+      </p>
+      <p>
+        <strong>Created Date:&nbsp;</strong>{{ feedback.created_at | date }}
+      </p>
+    </div>
+    <div class="d-flex align-items-center">
+      <p><strong>Rating:&nbsp;</strong></p>
+      @for(_ of [1,2,3,4,5]; track _){
+      <mat-icon>{{ _ <= feedback.rating ? "star" : "star_border" }}</mat-icon>
+      }
+    </div>
+    <div>
+      <p>
+        <strong
+          >How well does the head match the style of the statue?:&nbsp;</strong
+        >{{ feedback.text.split("|")[0] }}
+      </p>
+      <p>
+        <strong>How realistic is the generated head?:&nbsp;</strong
+        >{{ feedback.text.split("|")[1] }}
+      </p>
+      <p>
+        <strong
+          >How satisfied are you with the overall appearance of the statue with
+          the new head?:&nbsp;</strong
+        >{{ feedback.text.split("|")[2] }}
+      </p>
+      <p><strong>Feedback:&nbsp;</strong>{{ feedback.text.split("|")[3] }}</p>
+    </div>
+  </mat-card-content>
+</mat-card>

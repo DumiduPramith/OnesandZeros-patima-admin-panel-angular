@@ -1,0 +1,18 @@
+.sender {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.short-message {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+mat-panel-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}

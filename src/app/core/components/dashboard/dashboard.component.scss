@@ -1,0 +1,25 @@
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+mat-sidenav-container {
+  height: 100vh;
+}
+
+mat-sidenav {
+  height: 100vh;
+  margin-top: 64px; /* Adjust this value based on the height of your toolbar */
+}
+
+mat-sidenav-content {
+  flex-grow: 1;
+  overflow: auto;
+  margin-top: 64px;
+}
+
+.spacer {
+  height: 84px;
+}

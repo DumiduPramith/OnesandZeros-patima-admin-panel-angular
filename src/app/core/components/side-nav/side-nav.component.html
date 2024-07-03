@@ -1,0 +1,38 @@
+<mat-selection-list>
+  <mat-list-item
+    [routerLink]="['general-public', 'all']"
+    routerLinkActive="active"
+  >
+    <div class="d-flex align-items-center">
+      <mat-icon class="me-2">group</mat-icon> General Public Users
+    </div>
+  </mat-list-item>
+  <mat-list-item
+    [routerLink]="['archeologists', 'all']"
+    routerLinkActive="active"
+  >
+    <div class="d-flex align-items-center">
+      <mat-icon class="me-2">group</mat-icon> Archaeologist Users
+    </div>
+  </mat-list-item>
+  <mat-list-item [routerLink]="['admin', 'all']" routerLinkActive="active">
+    <div class="d-flex align-items-center">
+      <mat-icon class="me-2">shield_person</mat-icon> System Administrators
+    </div>
+  </mat-list-item>
+  <mat-list-item [routerLink]="['feedback', 'all']" routerLinkActive="active">
+    <div class="d-flex align-items-center">
+      <mat-icon class="me-2">reviews</mat-icon> Feedbacks
+    </div>
+  </mat-list-item>
+  <mat-list-item [routerLink]="['messages', 'all']" routerLinkActive="active">
+    <div class="d-flex align-items-center">
+      <mat-icon class="me-2">mail</mat-icon> Messages
+    </div>
+  </mat-list-item>
+  <mat-list-item routerLinkActive="active">
+    <div class="d-flex align-items-center">
+      <mat-icon class="me-2">settings</mat-icon> Settings
+    </div>
+  </mat-list-item>
+</mat-selection-list>

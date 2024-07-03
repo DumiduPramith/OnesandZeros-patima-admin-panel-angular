@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center align-items-center h-100">
+  <mat-card>
+    <h1 mat-title>Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" required />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Login</button>
+    </form>
+    @if(serverError){
+    <p class="alert alert-danger mt-3">{{ serverError }}</p>
+    }
+  </mat-card>
+</div>

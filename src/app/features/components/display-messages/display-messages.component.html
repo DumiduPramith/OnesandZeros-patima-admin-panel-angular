@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-center">
+  <h1 class="fw-bold">Messages</h1>
+</div>
+<div class="me-5 ms-5">
+  <mat-accordion>
+    @for(message of messages; track message){
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <span class="sender">{{ message.name }}</span>
+        </mat-panel-title>
+        <mat-panel-description>
+          <span class="short-message">{{ message.message_text }}</span>
+          <mat-checkbox
+            [checked]="message.check_status"
+            class="example-margin"
+            (change)="onCheck($event.checked, message.message_id)"
+          ></mat-checkbox>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{ message.message_text }}</p>
+      <p class="fw-bold">Email:- {{ message.email }}</p>
+      <p class="fw-bold">
+        Created At:- {{ message.created_at | date : "medium" }}
+      </p>
+    </mat-expansion-panel>
+    }
+  </mat-accordion>
+</div>

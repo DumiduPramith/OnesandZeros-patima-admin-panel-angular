@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <div class="container d-flex justify-content-between">
+    <span class="cursor-pointer" [routerLink]="['/dashboard']"
+      >Patima Admin Panel</span
+    >
+    <div>
+      <button mat-flat-button color="warn" (click)="logOut()">Log Out</button>
+    </div>
+  </div>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened
+    ><app-side-nav></app-side-nav
+  ></mat-sidenav>
+  <mat-sidenav-content>
+    <div class="mt-4">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="spacer"></div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,22 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 64px); /* Adjust for the toolbar height */
+  padding: 20px;
+}
+
+.welcome-card {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}

@@ -1,0 +1,26 @@
+.example-card {
+  max-width: 400px;
+  margin: 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-container img {
+  width: 48%;
+}
+
+.creator-clickable {
+  cursor: pointer; /* Changes the cursor to a pointer, indicating it's clickable */
+}
+
+.creator-clickable:hover {
+  color: #0056b3; /* Changes text color on hover */
+  text-decoration: underline; /* Adds underline on hover */
+}
+
+.creator-clickable:active {
+  color: #004085; /* Darker color when active */
+}

@@ -1,0 +1,40 @@
+<app-back-btn></app-back-btn>
+<div class="profile-container">
+  <mat-card class="profile-card">
+    <div class="profile-header">
+      <div
+        class="profile-picture"
+        [ngStyle]="{ 'background-image': 'url(' + profile?.profile_picture }"
+      ></div>
+      <div class="profile-info">
+        <h2>{{ profile?.fname }} {{ profile?.lname }}</h2>
+        @switch (profile?.role) { @case(1){
+        <p><strong>Role:</strong> general-public</p>
+        } @case(2){
+        <p><strong>Role:</strong> archeologists</p>
+        } @case(3){
+        <p><strong>Role:</strong> admin</p>
+        } }
+        <p><strong>User ID:</strong> {{ profile?.user_id }}</p>
+        <p><strong>Email:</strong> {{ profile?.email }}</p>
+        <p>
+          <strong>Activation Status:</strong>
+          {{ profile?.activation_status == 1 ? "True" : "False" }}
+        </p>
+        <p>
+          <strong>is admin</strong>
+          {{ profile?.is_admin == 1 ? "True" : "False" }}
+        </p>
+        @if(profile?.role == 2){
+        <p><strong>archeologist id:</strong>{{ profile?.archeologist_id }}</p>
+        }
+      </div>
+    </div>
+  </mat-card>
+</div>
+
+<div class="card-container">
+  @for(predict of prediction_; track predict){
+  <app-prediction-card [predict]="predict"></app-prediction-card>
+  }
+</div>
